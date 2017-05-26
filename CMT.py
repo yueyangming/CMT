@@ -27,7 +27,7 @@ class CMT(object):
 
 		# Initialise detector, descriptor, matcher
 		# check opencv version
-		if cv2.__version__ < 3.0:
+		if cv2.__version__.split('.')[0] < '3':
 			self.detector = cv2.FeatureDetector_create(self.DETECTOR)
 			self.descriptor = cv2.DescriptorExtractor_create(self.DESCRIPTOR)
 			self.matcher = cv2.DescriptorMatcher_create(self.MATCHER)
